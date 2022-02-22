@@ -1,3 +1,6 @@
+# git status add commit push.
+# on git commit, VIM editor:  press i for insert mode, write comment, ESC then : then wq (w for write, q for quit).	
+
 # Load a z styler to compare lower case characters to both lower and capital case characters.
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -65,13 +68,60 @@ fi
 
 
 
-
-
-
-
-
-
-
-
+# This would open Visual Studio Code app when the user type "code"
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 alias code .="code"
+
+
+# API Call for GET of user Github (copied from Postman)
+curl --location --request GET 'https://api.github.com/user' \
+--header 'Authorization: Basic bGF2aXY6Z2hwX0doT2NWOGNPYUNrMG9DanFjVEZRcmxHYmdkMVg5QjJKNm84cw==' \
+--header 'Cookie: _octo=GH1.1.465521100.1645027668; logged_in=no'
+
+
+#check if Brew is installed
+# https://stackoverflow.com/questions/592620/how-can-i-check-if-a-program-exists-from-a-bash-script
+
+
+
+
+
+
+
+
+if ! command -v git &> /dev/null
+	then
+		echo "git could not be found"    			
+	else
+		echo "git is installed"
+fi
+
+if ! command -v brew &> /dev/null
+	then
+		echo "brew could not be found"    			
+	else
+		echo "brew is installed"
+fi
+
+if ! command -v jq &> /dev/null
+	then
+		echo "jq could not be found"    			
+	else
+		echo "jq is installed"
+fi
+
+
+
+
+
+
+
+
+
+
+# Install Brew
+
+
+
+# using jq, grab the login name
+# after implementing jq, use the zshrc to verify that jq is installed
