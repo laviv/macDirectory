@@ -1,3 +1,7 @@
+# Load a z styler to compare lower case characters to both lower and capital case characters.
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 # the / sign displays the current path
 # F is used to___
 # %n is referring to the username
@@ -58,3 +62,16 @@ else
 
 fi
 
+
+
+
+
+
+
+
+
+
+
+
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+alias code .="code"
